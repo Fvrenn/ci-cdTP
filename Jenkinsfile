@@ -19,13 +19,19 @@ pipeline {
                 sh 'echo "Tests OK"'
             }
         }
+        stage('Déploiement') {
+            steps {
+                echo 'Déploiement en production...'
+                sh 'echo "Déploiement OK"'
+            }
+        }
     }
     post {
         success {
-            echo 'Pipeline CI terminée avec succès !'
+            echo 'Pipeline CI/CD terminée avec succès !'
         }
         failure {
-            echo 'Échec de la pipeline CI.'
+            echo 'Échec de la pipeline CI/CD.'
         }
     }
 }
